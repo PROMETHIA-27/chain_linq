@@ -133,11 +133,14 @@ mod macros {
             {$($prefix:stmt)*}
             {select {$result:expr} into {$new_base:ident}, $($toks:tt)*}
         ) => {
+            let $new_base = $prev.map(|$var| { $($prefix)* $result });
+
             $crate::linq_impl!{
-                {$new_base}
-                {$prev.map(|$var| { $($prefix)* $result })}
-                {}
-                {$($toks)*}
+                // {$new_base}
+                // {$prev.map(|$var| { $($prefix)* $result })}
+                // {}
+                // {$($toks)*}
+                $($toks)*
             }
         };
 
