@@ -135,13 +135,7 @@ mod macros {
         ) => {
             let $new_base = $prev.map(|$var| { $($prefix)* $result });
 
-            $crate::linq_impl!{
-                // {$new_base}
-                // {$prev.map(|$var| { $($prefix)* $result })}
-                // {}
-                // {$($toks)*}
-                $($toks)*
-            }
+            $crate::linq_impl!{ $($toks)* }
         };
 
         (
@@ -205,13 +199,10 @@ mod macros {
         ) => {
             {
                 use ::itertools::*;
+
+                let $group = $prev.group_by(|$grouped| { $($prefix)* $grouper }).into_iter().map(|g| g.1)
                 
-                $crate::linq_impl!{
-                    {$group}
-                    {$prev.group_by(|$grouped| { $($prefix)* $grouper }).into_iter().map(|g| g.1)}
-                    {}
-                    {$($toks)*}
-                }
+                $crate::linq_impl!{ $($toks)* }
             }
             
         };
