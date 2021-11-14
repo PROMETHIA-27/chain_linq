@@ -1,0 +1,21 @@
+[package]
+name = "chain_linq"
+version = "0.1.0"
+edition = "2021"
+author = "PROMETHIA"
+description = "An implementation of .NET's LINQ in rust as a declarative macro."
+readme = "README.md"
+repository = "https://github.com/PROMETHIA-27/big_mac/"
+license = "MIT"
+keywords = ["macros", "metamacros", "syntax"]
+categories = ["rust-patterns"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+itertools = "0.10.1"
+big_mac = { path = "..//big_mac" }
+
+[features]
+default = ["expanded"]
+expanded = []
