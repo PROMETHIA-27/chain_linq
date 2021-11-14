@@ -1,6 +1,6 @@
 [package]
 name = "chain_linq"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 author = "PROMETHIA"
 description = "An implementation of .NET's LINQ in rust as a declarative macro."
