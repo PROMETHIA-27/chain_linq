@@ -242,7 +242,7 @@ mod macros {
             {$($prefix:stmt)*}
             {collect {$result:expr},}
         ) => {
-            $prev.map(|$var| $result).collect()
+            $prev.map(|$var| { $($prefix)* $result }).collect()
         };
 
         (
@@ -251,7 +251,7 @@ mod macros {
             {$($prefix:stmt)*}
             {collect {$result:expr} as {$collection:ty},}
         ) => {
-            $prev.map(|$var| $result).collect::<$collection>()
+            $prev.map(|$var| { $($prefix)* $result }).collect::<$collection>()
         };
 
         (
