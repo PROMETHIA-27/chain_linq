@@ -144,6 +144,8 @@ mod macros {
             {$($prefix:stmt)*}
             {select {$result:expr},}
         ) => {
+            use ::std::iter::*;
+
             $prev.map(|$var| { $($prefix)* $result })
         };
 
@@ -214,6 +216,7 @@ mod macros {
             {group {$grouped:ident} by {$grouper:expr}, $($toks:tt)*}
         ) => {
             {
+                use ::std::iter::*;
                 use ::itertools::*;
                 
                 $prev.group_by(|$grouped| { $($prefix)* $grouper })
@@ -242,6 +245,8 @@ mod macros {
             {$($prefix:stmt)*}
             {collect {$result:expr},}
         ) => {
+            use ::std::iter::*;
+
             $prev.map(|$var| { $($prefix)* $result }).collect()
         };
 
@@ -251,6 +256,8 @@ mod macros {
             {$($prefix:stmt)*}
             {collect {$result:expr} as {$collection:ty},}
         ) => {
+            use ::std::iter::*;
+
             $prev.map(|$var| { $($prefix)* $result }).collect::<$collection>()
         };
 
