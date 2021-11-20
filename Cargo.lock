@@ -10,7 +10,7 @@ checksum = "8246f7c96d29b1d9faee047c4e02dcdd2a5b1e1cf322186c248e42debbaf9367"
 
 [[package]]
 name = "chain_linq"
-version = "0.1.2"
+version = "0.1.3"
 dependencies = [
  "big_mac",
  "itertools",
