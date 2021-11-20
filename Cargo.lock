@@ -4,9 +4,9 @@ version = 3
 
 [[package]]
 name = "big_mac"
-version = "0.1.5"
+version = "0.1.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "387593d639ead0739d47d388ae745e8f0556958e6ad2db2b0a5680d138e252c0"
+checksum = "8246f7c96d29b1d9faee047c4e02dcdd2a5b1e1cf322186c248e42debbaf9367"
 
 [[package]]
 name = "chain_linq"
